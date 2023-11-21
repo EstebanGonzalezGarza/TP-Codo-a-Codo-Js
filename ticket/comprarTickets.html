@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Comprar tickets</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" data-bs-theme="dark">
+        <div class="container-md">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/codoacodo.png" alt="logo" height="60px">
+                Conf Bs As
+            </a>
+            <a href="../index.html">
+                <i class="bi bi-box-arrow-in-left" style="font-size: 2rem; color: white;"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="d-flex flex-wrap pt-4 justify-content-center text-center gap-2">
+        <div class="card border border-primary border-2 py-3" style="width: 15rem">
+            <div class="fw-bold">Estudiante</div>
+            <div>Tienen un descuento</div>
+            <div class="fw-bold py-2">80%</div>
+            <div class="box-font">* presentar documentación</div>
+        </div>
+        <div class="card border border-success border-2 py-3" style="width: 15rem">
+            <div class="fw-bold">Trainee</div>
+            <div>Tienen un descuento</div>
+            <div class="fw-bold py-2">50%</div>
+            <div class="box-font">* presentar documentación</div>
+        </div>
+        <div class="card border border-warning border-2 py-3" style="width: 15rem">
+            <div class="fw-bold">Junior</div>
+            <div>Tienen un descuento</div>
+            <div class="fw-bold py-2">15%</div>
+            <div class="box-font">* presentar documentación</div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <div>VENTA</div>
+        <h2>VALOR DE TICKET $200</h2>
+    </div>
+
+    <div class="d-flex justify-content-center m-3">
+        <form action="../server/procesoCompra.html" method="post" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Campo obligatorio
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
+                        required>
+                    <div class="invalid-feedback">
+                        Campo obligatorio
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="correo" id="correo" placeholder="Correo" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Campo obligatorio
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col mb-3"> Cantidad
+                    <input type="number" name="cant" id="cant" onchange="calcTotal()" onkeyup="calcTotal()"
+                        placeholder="Cantidad Tickets" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar una cantidad
+                    </div>
+                </div>
+                <div class="col mb-3"> Categoría
+                    <select class="form-select" id="desc" onchange="calcTotal()">
+                        <option value="0">Sin descuento</option>
+                        <option value="80">Estudiante</option>
+                        <option value="50">Trainee</option>
+                        <option value="15">Junior</option>
+                    </select>
+                </div>
+            </div>
+            <div class="bg-secondary-subtle mb-3 p-2">
+                <div class="col">
+                    Total a pagar: $ <span id="total" class="fw-bold p-1">0</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-2">
+                <input type="submit" id="reset" value="Borrar" class="btn btn-success col-6">
+                <input type="button" value="Resumen" class="btn btn-success col-6" onclick="mostrarResumen()">
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <ul class="nav justify-content-center py-5 fs-5">
+            <li class="nav-item">
+                <a class="nav-link link-light" href="#">Preguntas frecuentes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-light" href="#">Contáctanos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-light" href="#">Prensa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-light" href="#">Conferencia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-light" href="#">Términos y condiciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-light" href="#">Privacidad</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-light" href="#">Estudiantes</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

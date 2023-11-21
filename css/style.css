@@ -1,0 +1,36 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.brillo {
+    filter: brightness(50%);
+}
+
+.card-text {
+    font-size: small;
+}
+
+.fondoOscuro {
+    background-color: rgb(53, 58, 64);
+}
+
+.env-btm {
+    background-color: rgb(150, 201, 62);
+    border: none;
+}
+
+.box-font{
+    font-size: smaller;
+    color: gray;
+}
+
+footer {
+    background-color: rgb(29, 57, 71);
+    margin-top: auto;
+}
